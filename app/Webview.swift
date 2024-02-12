@@ -15,6 +15,8 @@ struct Webview: UIViewRepresentable {
         let request = URLRequest(url: self.url, cachePolicy: .returnCacheDataElseLoad)
         webview.scrollView.maximumZoomScale = 1.0
         webview.scrollView.minimumZoomScale = 1.0
+        webview.allowsBackForwardNavigationGestures = true
+        
         webview.load(request)
         return webview
     }
@@ -22,6 +24,8 @@ struct Webview: UIViewRepresentable {
         let request = URLRequest(url: self.url, cachePolicy: .returnCacheDataElseLoad)
         webview.scrollView.maximumZoomScale = 1.0
         webview.scrollView.minimumZoomScale = 1.0
+        webview.allowsBackForwardNavigationGestures = true
+        
         webview.load(request)
     }
 }
