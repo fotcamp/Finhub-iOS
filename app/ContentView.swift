@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Webview(url: URL(string: "https://finhub-front-end.vercel.app/")!)
+        Webview(url: URL(string: "http://finhub-front-end.vercel.app/")!).edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
     }
 }
 
