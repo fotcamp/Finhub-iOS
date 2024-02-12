@@ -17,6 +17,12 @@ struct Webview: UIViewRepresentable {
         webview.scrollView.minimumZoomScale = 1.0
         webview.allowsBackForwardNavigationGestures = true
         
+        if #available(iOS 16.4, *) {
+            #if DEBUG
+                webview.isInspectable = true
+            #endif
+        }
+        
         webview.load(request)
         return webview
     }
@@ -25,6 +31,12 @@ struct Webview: UIViewRepresentable {
         webview.scrollView.maximumZoomScale = 1.0
         webview.scrollView.minimumZoomScale = 1.0
         webview.allowsBackForwardNavigationGestures = true
+        
+        if #available(iOS 16.4, *) {
+            #if DEBUG
+                webview.isInspectable = true
+            #endif
+        }
         
         webview.load(request)
     }
