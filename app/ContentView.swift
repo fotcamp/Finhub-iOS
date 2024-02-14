@@ -12,12 +12,10 @@ struct ContentView: View {
     @State private var keyboardHeight: CGFloat = 0
 
     var body: some View {
+
         ZStack(content: {
-            Color.white
-                .edgesIgnoringSafeArea(.top)
-            Color.white
-                .edgesIgnoringSafeArea(.bottom)
             Webview(url: URL(string: "http://finhub-front-end.vercel.app/")!)
+                .edgesIgnoringSafeArea(.all)
                 .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
                     if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
                         self.keyboardHeight = keyboardFrame.height
