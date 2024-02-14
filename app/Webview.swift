@@ -18,10 +18,14 @@ struct Webview: UIViewRepresentable {
         webview.allowsBackForwardNavigationGestures = true
         
         if #available(iOS 16.4, *) {
-            #if DEBUG
+//            #if DEBUG
                 webview.isInspectable = true
-            #endif
+//            #endif
         }
+        
+        webview.insetsLayoutMarginsFromSafeArea = false
+        
+        webview.scrollView.contentInset = .zero
         
         webview.load(request)
         return webview
@@ -33,10 +37,12 @@ struct Webview: UIViewRepresentable {
         webview.allowsBackForwardNavigationGestures = true
         
         if #available(iOS 16.4, *) {
-            #if DEBUG
+//            #if DEBUG
                 webview.isInspectable = true
-            #endif
+//            #endif
         }
+        
+        webview.scrollView.contentInsetAdjustmentBehavior = .never
         
         webview.load(request)
     }
