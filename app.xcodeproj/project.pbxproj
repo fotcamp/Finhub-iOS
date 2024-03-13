@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		FD7C22BE2B791FBE00CA1FC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */; };
-		FD7C22C12B79208E00CA1FC1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = FD7C22C02B79208E00CA1FC1 /* FirebaseAnalytics */; };
 		FDFD05C12B74E59C0029CA87 /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD05C02B74E59C0029CA87 /* appApp.swift */; };
 		FDFD05C32B74E59C0029CA87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD05C22B74E59C0029CA87 /* ContentView.swift */; };
 		FDFD05C52B74E59D0029CA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDFD05C42B74E59D0029CA87 /* Assets.xcassets */; };
@@ -56,7 +55,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD7C22C12B79208E00CA1FC1 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,7 +150,6 @@
 			);
 			name = app;
 			packageProductDependencies = (
-				FD7C22C02B79208E00CA1FC1 /* FirebaseAnalytics */,
 			);
 			productName = app;
 			productReference = FDFD05BD2B74E59C0029CA87 /* app.app */;
@@ -433,7 +430,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
 				DEVELOPMENT_TEAM = JBY3X8KKJH;
 				ENABLE_PREVIEWS = YES;
@@ -448,7 +445,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fotcamp.finhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -463,7 +460,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 10;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
 				DEVELOPMENT_TEAM = JBY3X8KKJH;
 				ENABLE_PREVIEWS = YES;
@@ -478,7 +475,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.7;
+				MARKETING_VERSION = 1.0.8;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fotcamp.finhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -614,14 +611,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		FD7C22C02B79208E00CA1FC1 /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = FD7C22BF2B79208E00CA1FC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FDFD05B52B74E59C0029CA87 /* Project object */;
 }
