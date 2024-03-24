@@ -11,7 +11,7 @@ import WebKit
 struct Webview: UIViewRepresentable {
     let url: URL
     func makeUIView(context: UIViewRepresentableContext<Webview>) -> WKWebView {
-        let webview = WKWebView()
+        let webview = FinhubWebView()
         let request = URLRequest(url: self.url, cachePolicy: .returnCacheDataElseLoad)
         webview.scrollView.maximumZoomScale = 1.0
         webview.scrollView.minimumZoomScale = 1.0
