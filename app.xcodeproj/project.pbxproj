@@ -11,6 +11,7 @@
 		C88D19382B9DE72200197101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19372B9DE72200197101 /* AppDelegate.swift */; };
 		C88D193A2B9DE73600197101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19392B9DE73600197101 /* SceneDelegate.swift */; };
 		FD7C22BE2B791FBE00CA1FC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */; };
+		FDA5B4E42BB7DE9300A4DC49 /* FinhubWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */; };
 		FDFD05C12B74E59C0029CA87 /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD05C02B74E59C0029CA87 /* appApp.swift */; };
 		FDFD05C32B74E59C0029CA87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD05C22B74E59C0029CA87 /* ContentView.swift */; };
 		FDFD05C52B74E59D0029CA87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDFD05C42B74E59D0029CA87 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		C88D19392B9DE73600197101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C88D193B2B9DE87C00197101 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinhubWebView.swift; sourceTree = "<group>"; };
 		FDFD05BD2B74E59C0029CA87 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFD05C02B74E59C0029CA87 /* appApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = appApp.swift; sourceTree = "<group>"; };
 		FDFD05C22B74E59C0029CA87 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		FDFD05BF2B74E59C0029CA87 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */,
 				C867F0B82BB054A5004CE321 /* Info.plist */,
 				C88D193B2B9DE87C00197101 /* app.entitlements */,
 				FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */,
@@ -287,6 +290,7 @@
 				FDFD05EB2B74E6890029CA87 /* Webview.swift in Sources */,
 				FDFD05C32B74E59C0029CA87 /* ContentView.swift in Sources */,
 				FDFD05C12B74E59C0029CA87 /* appApp.swift in Sources */,
+				FDA5B4E42BB7DE9300A4DC49 /* FinhubWebView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,9 +450,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = app/app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
-				DEVELOPMENT_TEAM = 8XA9DWRR85;
+				DEVELOPMENT_TEAM = JBY3X8KKJH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
@@ -462,7 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fotcamp.finhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -478,9 +482,9 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = app/app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 10;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
-				DEVELOPMENT_TEAM = 8XA9DWRR85;
+				DEVELOPMENT_TEAM = JBY3X8KKJH;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
@@ -494,7 +498,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.8;
+				MARKETING_VERSION = 1.0.9;
 				PRODUCT_BUNDLE_IDENTIFIER = com.fotcamp.finhub;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
