@@ -10,18 +10,23 @@ import UIKit
 
 enum SwiftSupport {
     static var keyWindow: UIWindow? {
+        var keyWindow: UIWindow?
         let scenes = UIApplication.shared.connectedScenes
             .compactMap({ scene in
                 return scene as? UIWindowScene
             })
         
         for scene in scenes {
-            let key = scene.windows.first { window in
+            keyWindow = scene.windows.first { window in
                 return window.isKeyWindow
+            }
+            
+            if keyWindow != nil {
+                break
             }
         }
         
-        return nil
+        return keyWindow
     }
     
     static var topViewController: UIViewController? {

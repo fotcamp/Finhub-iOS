@@ -7,7 +7,9 @@
 
 import Foundation
 
-extension Dictionary {
+typealias JSON = Dictionary<String, Any>
+
+extension JSON {
     var toJsonString: String {
         get {
             guard 
@@ -16,5 +18,9 @@ extension Dictionary {
             
             return String(data: jsonData, encoding: .utf8) ?? ""
         }
+    }
+    
+    func getString(_ key: String) -> String? {
+        return self[key] as? String
     }
 }

@@ -80,7 +80,7 @@ class WebViewContentController: NSObject, WKScriptMessageHandler {
         }
     }
     
-    func convertToDictionary(text: String) -> [String: Any]? {
+    func convertToDictionary(text: String) -> JSON? {
         if let data = text.data(using: .utf8) {
             do {
                 return try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
@@ -97,7 +97,7 @@ extension WebViewContentController: WebBridgeDelegate {
         let dataString = data?.replacingOccurrences(of: "'", with: "\\'") ?? ""
 
         let jsCode = "window.dispatchEvent(new CustomEvent('\(callbackId)', { detail: '\(dataString)' }));"
-
+        
         self.webView?.evaluateJavaScript(jsCode) { result, error in
             if let error = error {
                 print("Error dispatching event in WebView: \(error)")
