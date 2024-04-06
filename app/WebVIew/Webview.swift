@@ -94,9 +94,16 @@ class WebViewContentController: NSObject, WKScriptMessageHandler {
 
 extension WebViewContentController: WebBridgeDelegate {
     func callbackWeb(callbackId: String, data: String?) {
-//        "{\"detail\":\"\(data)\""
-        let dic = [ "detail": data ]
-        
-        self.webView?.evaluateJavaScript("window.dispatchEvent(new CustomEvent(\(callbackId), \(dic.toJsonString)))")
+        let dataString = data?.replacingOccurrences(of: "'", with: "\\'") ?? ""
+
+        let jsCode = "window.dispatchEvent(new CustomEvent('\(callbackId)', { detail: '\(dataString)' }));"
+
+        self.webView?.evaluateJavaScript(jsCode) { result, error in
+            if let error = error {
+                print("Error dispatching event in WebView: \(error)")
+            } else {
+                print("Event dispatched successfully with data: \(dataString)")
+            }
+        }
     }
 }
