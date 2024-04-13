@@ -1,0 +1,26 @@
+//
+//  Dictionary+Extension.swift
+//  app
+//
+//  Created by 조민기 on 4/6/24.
+//
+
+import Foundation
+
+typealias JSON = Dictionary<String, Any>
+
+extension JSON {
+    var toJsonString: String {
+        get {
+            guard 
+                let jsonData = try? JSONSerialization.data(withJSONObject: self)
+            else { return "" }
+            
+            return String(data: jsonData, encoding: .utf8) ?? ""
+        }
+    }
+    
+    func getString(_ key: String) -> String? {
+        return self[key] as? String
+    }
+}

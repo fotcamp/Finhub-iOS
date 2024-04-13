@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C81D694A2BC170B700C77484 /* WebBridgeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D69492BC170B700C77484 /* WebBridgeHandler.swift */; };
+		C81D694C2BC1821D00C77484 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D694B2BC1821D00C77484 /* SwiftSupport.swift */; };
+		C81D694F2BC18B9000C77484 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D694E2BC18B9000C77484 /* JSON.swift */; };
+		C81D69512BC193AE00C77484 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D69502BC193AE00C77484 /* UIColor+Extension.swift */; };
 		C867F0C32BB059C0004CE321 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C867F0C22BB059C0004CE321 /* FirebaseMessaging */; };
 		C88D19382B9DE72200197101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19372B9DE72200197101 /* AppDelegate.swift */; };
 		C88D193A2B9DE73600197101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19392B9DE73600197101 /* SceneDelegate.swift */; };
@@ -40,6 +44,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C81D69492BC170B700C77484 /* WebBridgeHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebBridgeHandler.swift; sourceTree = "<group>"; };
+		C81D694B2BC1821D00C77484 /* SwiftSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSupport.swift; sourceTree = "<group>"; };
+		C81D694E2BC18B9000C77484 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
+		C81D69502BC193AE00C77484 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		C867F0B82BB054A5004CE321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C88D19372B9DE72200197101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88D19392B9DE73600197101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +93,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C81D69482BC1708600C77484 /* WebVIew */ = {
+			isa = PBXGroup;
+			children = (
+				FDFD05EA2B74E6890029CA87 /* Webview.swift */,
+				C81D69492BC170B700C77484 /* WebBridgeHandler.swift */,
+			);
+			path = WebVIew;
+			sourceTree = "<group>";
+		};
+		C81D694D2BC18B7900C77484 /* extension */ = {
+			isa = PBXGroup;
+			children = (
+				C81D694E2BC18B9000C77484 /* JSON.swift */,
+				C81D69502BC193AE00C77484 /* UIColor+Extension.swift */,
+			);
+			path = extension;
+			sourceTree = "<group>";
+		};
 		FDFD05B42B74E59C0029CA87 = {
 			isa = PBXGroup;
 			children = (
@@ -108,6 +134,8 @@
 		FDFD05BF2B74E59C0029CA87 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				C81D694D2BC18B7900C77484 /* extension */,
+				C81D69482BC1708600C77484 /* WebVIew */,
 				FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */,
 				C867F0B82BB054A5004CE321 /* Info.plist */,
 				C88D193B2B9DE87C00197101 /* app.entitlements */,
@@ -116,9 +144,9 @@
 				FDFD05C22B74E59C0029CA87 /* ContentView.swift */,
 				FDFD05C42B74E59D0029CA87 /* Assets.xcassets */,
 				FDFD05C62B74E59D0029CA87 /* Preview Content */,
-				FDFD05EA2B74E6890029CA87 /* Webview.swift */,
 				C88D19372B9DE72200197101 /* AppDelegate.swift */,
 				C88D19392B9DE73600197101 /* SceneDelegate.swift */,
+				C81D694B2BC1821D00C77484 /* SwiftSupport.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -285,12 +313,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81D694C2BC1821D00C77484 /* SwiftSupport.swift in Sources */,
 				C88D193A2B9DE73600197101 /* SceneDelegate.swift in Sources */,
 				C88D19382B9DE72200197101 /* AppDelegate.swift in Sources */,
 				FDFD05EB2B74E6890029CA87 /* Webview.swift in Sources */,
+				C81D694A2BC170B700C77484 /* WebBridgeHandler.swift in Sources */,
+				C81D694F2BC18B9000C77484 /* JSON.swift in Sources */,
 				FDFD05C32B74E59C0029CA87 /* ContentView.swift in Sources */,
 				FDFD05C12B74E59C0029CA87 /* appApp.swift in Sources */,
 				FDA5B4E42BB7DE9300A4DC49 /* FinhubWebView.swift in Sources */,
+				C81D69512BC193AE00C77484 /* UIColor+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
