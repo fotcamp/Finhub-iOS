@@ -31,11 +31,21 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         
+        notification(application, remoteNotification: launchOptions)
+        
         return true
     }
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func notification(_ application: UIApplication, remoteNotification launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
+        guard
+            let notification = launchOptions?[.remoteNotification] as? JSON
+        else { return }
+        
+        SwiftSupport.sendNotification(data: notification.toJsonString)
     }
 }
 
@@ -49,7 +59,11 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, 
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        completionHandler()
+        guard
+            let userInfo = response.notification.request.content.userInfo as? JSON
+        else { return }
+
+        SwiftSupport.sendNotification(data: userInfo.toJsonString)
     }
 }
 
