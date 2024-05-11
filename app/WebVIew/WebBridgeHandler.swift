@@ -7,6 +7,7 @@
 
 import Foundation
 import WebKit
+import FirebaseMessaging
 
 protocol WebBridgeDelegate: NSObjectProtocol {
     func callbackWeb(callbackId: String, data: String?)
@@ -25,6 +26,10 @@ class WebBridgeHandler: NSObject {
 }
 
 extension WebBridgeHandler {
+    private func getCallback(_ json: JSON) -> String? {
+        return json.getString("callbackId")
+    }
+    
     @objc func share(_ json: JSON) {
         let urlString = json.getString("val2") ?? ""
         let activityViewController = UIActivityViewController(activityItems: [urlString], applicationActivities: nil)
@@ -42,7 +47,7 @@ extension WebBridgeHandler {
             version = v
         }
         
-        if let callbackId = json.getString("callbackId") {
+        if let callbackId = getCallback(json) {
             delegate?.callbackWeb(callbackId: callbackId, data: version)
         }
     }
@@ -56,7 +61,7 @@ extension WebBridgeHandler {
             "right": window?.safeAreaInsets.right ?? 0
         ]
         
-        if let callbackId = json.getString("callbackId") {
+        if let callbackId = getCallback(json) {
             delegate?.callbackWeb(callbackId: callbackId, data: data.toJsonString)
         }
     }
@@ -64,6 +69,16 @@ extension WebBridgeHandler {
     @objc func setSafeAreaBackgroundColor(_ json: JSON) {
         if let color = json.getString("val2") {
             SwiftSupport.topViewController?.view.backgroundColor = UIColor.create(color)
+        }
+    }
+    
+    @objc func getPushToken(_ json: JSON) {
+        guard let callback = getCallback(json) else { return }
+        
+        Messaging.messaging().token { [weak self] token, error in
+            guard let token = token else { return }
+            
+            self?.delegate?.callbackWeb(callbackId: callback, data: token)
         }
     }
 }
