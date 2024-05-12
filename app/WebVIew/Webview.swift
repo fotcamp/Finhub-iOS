@@ -58,23 +58,20 @@ struct Webview_Previews: PreviewProvider {
 
 class WebViewContentController: NSObject, WKScriptMessageHandler {
     weak var webView: FinhubWebView?
+    var handler: WebBridgeHandler?
     
     init(_ webView: FinhubWebView) {
+        super.init()
+        
         self.webView = webView
+        self.handler = WebBridgeHandler(self)
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
-        let name = message.name.trimmingCharacters(in: .whitespacesAndNewlines)
-        
-        print(name)
         if message.name == "jsToNative" {
             if let body = message.body as? String {
-                print(body)
-                
-                let handler = WebBridgeHandler(self)
-                
                 if let dic = convertToDictionary(text: body), let action = dic["val1"] as? String {
-                    handler.run(action: action, dic: dic)
+                    self.handler?.run(action: action, dic: dic)
                 }
             }
         }
@@ -95,7 +92,6 @@ class WebViewContentController: NSObject, WKScriptMessageHandler {
 extension WebViewContentController: WebBridgeDelegate {
     func callbackWeb(callbackId: String, data: String?) {
         let dataString = data?.replacingOccurrences(of: "'", with: "\\'") ?? ""
-
         let jsCode = "window.dispatchEvent(new CustomEvent('\(callbackId)', { detail: '\(dataString)' }));"
         
         self.webView?.evaluateJavaScript(jsCode) { result, error in
