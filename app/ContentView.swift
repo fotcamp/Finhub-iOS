@@ -19,6 +19,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             Webview(url: $url)
+                .edgesIgnoringSafeArea(.all)
                 .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
                     if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
                         self.keyboardHeight = keyboardFrame.height
