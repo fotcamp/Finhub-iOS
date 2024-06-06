@@ -31,8 +31,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         Messaging.messaging().delegate = self
         UNUserNotificationCenter.current().delegate = self
         
-        notification(application, remoteNotification: launchOptions)
-        
         return true
     }
     
@@ -40,12 +38,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         Messaging.messaging().apnsToken = deviceToken
     }
     
-    func notification(_ application: UIApplication, remoteNotification launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
-        guard
-            let notification = launchOptions?[.remoteNotification] as? JSON
-        else { return }
-        
-        SwiftSupport.sendNotification(data: notification.toJsonString)
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
+        print()
     }
 }
 
@@ -62,6 +56,10 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         guard
             let userInfo = response.notification.request.content.userInfo as? JSON
         else { return }
+        
+        if let view = userInfo.getString("view") {
+            Static.viewUrl = view
+        }
 
         SwiftSupport.sendNotification(data: userInfo.toJsonString)
     }
@@ -69,6 +67,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        
+//        print("token : \(fcmToken)")
     }
 }
