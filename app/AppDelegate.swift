@@ -37,10 +37,6 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
     }
-    
-    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any]) {
-        print()
-    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
@@ -67,6 +63,6 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-//        print("token : \(fcmToken)")
+//        print("token : \(fcmToken)") // 푸시토큰 확인용
     }
 }
