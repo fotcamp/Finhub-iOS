@@ -8,6 +8,7 @@
 import Foundation
 import WebKit
 import FirebaseMessaging
+import FirebaseRemoteConfig
 
 protocol WebBridgeDelegate: NSObjectProtocol {
     func callbackWeb(callbackId: String, data: String?)
@@ -77,8 +78,18 @@ extension WebBridgeHandler {
         
         Messaging.messaging().token { [weak self] token, error in
             guard let token = token else { return }
-            
             self?.delegate?.callbackWeb(callbackId: callback, data: token)
+        }
+    }
+    
+    @objc func getRemoteConfig(_ json: JSON) {
+        guard 
+            let key = json.getString("val2"),
+            let callback = getCallback(json)
+        else { return }
+        
+        FinhubRemoteConfig.shared.get(key: key) { [weak self] value in
+            self?.delegate?.callbackWeb(callbackId: callback, data: value)
         }
     }
 }

@@ -17,6 +17,8 @@
 		C88D193A2B9DE73600197101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19392B9DE73600197101 /* SceneDelegate.swift */; };
 		C8AAE3342BE11AFE002478B2 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAE3332BE11AFE002478B2 /* NotificationName.swift */; };
 		C8AAE3362BE1228D002478B2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAE3352BE1228D002478B2 /* String+Extension.swift */; };
+		C8C3B1552C2710CE00D558B9 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C8C3B1542C2710CE00D558B9 /* FirebaseRemoteConfigSwift */; };
+		C8C3B1572C2716B700D558B9 /* FinhubRemoteConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C3B1562C2716B700D558B9 /* FinhubRemoteConfig.swift */; };
 		FD7C22BE2B791FBE00CA1FC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */; };
 		FDA5B4E42BB7DE9300A4DC49 /* FinhubWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */; };
 		FDFD05C12B74E59C0029CA87 /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD05C02B74E59C0029CA87 /* appApp.swift */; };
@@ -58,6 +60,7 @@
 		C88D193B2B9DE87C00197101 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
 		C8AAE3332BE11AFE002478B2 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
 		C8AAE3352BE1228D002478B2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		C8C3B1562C2716B700D558B9 /* FinhubRemoteConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinhubRemoteConfig.swift; sourceTree = "<group>"; };
 		FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinhubWebView.swift; sourceTree = "<group>"; };
 		FDFD05BD2B74E59C0029CA87 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -79,6 +82,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C867F0C32BB059C0004CE321 /* FirebaseMessaging in Frameworks */,
+				C8C3B1552C2710CE00D558B9 /* FirebaseRemoteConfigSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +124,14 @@
 			path = extension;
 			sourceTree = "<group>";
 		};
+		C823E0DD2C28246A0013EF3E /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				C8C3B1562C2716B700D558B9 /* FinhubRemoteConfig.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
 		FDFD05B42B74E59C0029CA87 = {
 			isa = PBXGroup;
 			children = (
@@ -143,6 +155,7 @@
 		FDFD05BF2B74E59C0029CA87 /* app */ = {
 			isa = PBXGroup;
 			children = (
+				C823E0DD2C28246A0013EF3E /* utils */,
 				C81D694D2BC18B7900C77484 /* extension */,
 				C81D69482BC1708600C77484 /* WebVIew */,
 				C867F0B82BB054A5004CE321 /* Info.plist */,
@@ -203,6 +216,7 @@
 			name = app;
 			packageProductDependencies = (
 				C867F0C22BB059C0004CE321 /* FirebaseMessaging */,
+				C8C3B1542C2710CE00D558B9 /* FirebaseRemoteConfigSwift */,
 			);
 			productName = app;
 			productReference = FDFD05BD2B74E59C0029CA87 /* app.app */;
@@ -328,6 +342,7 @@
 				C88D19382B9DE72200197101 /* AppDelegate.swift in Sources */,
 				C8AAE3362BE1228D002478B2 /* String+Extension.swift in Sources */,
 				C86A24032C109C64006285DD /* Static.swift in Sources */,
+				C8C3B1572C2716B700D558B9 /* FinhubRemoteConfig.swift in Sources */,
 				FDFD05EB2B74E6890029CA87 /* Webview.swift in Sources */,
 				C81D694A2BC170B700C77484 /* WebBridgeHandler.swift in Sources */,
 				C81D694F2BC18B9000C77484 /* JSON.swift in Sources */,
@@ -684,6 +699,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C867F0C12BB059C0004CE321 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		C8C3B1542C2710CE00D558B9 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C867F0C12BB059C0004CE321 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
