@@ -6,15 +6,19 @@
 //
 
 import SwiftUI
-import WebKit
 
 struct ContentView: View {
-    @State private var keyboardHeight: CGFloat = 0
-
+    @State private var keyboardHeight: CGFloat
+    @State private var url: String
+    
+    init() {
+        self.keyboardHeight = 0
+        self.url = Static.baseUrl + Static.viewUrl
+    }
+    
     var body: some View {
-
-        ZStack(content: {
-            Webview(url: URL(string: "http://finhub-front-end.vercel.app/")!)
+        ZStack {
+            Webview(url: $url)
                 .edgesIgnoringSafeArea(.all)
                 .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillShowNotification)) { notification in
                     if let keyboardFrame = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
@@ -24,7 +28,17 @@ struct ContentView: View {
                 .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardWillHideNotification)) { _ in
                     self.keyboardHeight = 0
                 }
-        })
+                .onReceive(NotificationCenter.default.publisher(for: .push), perform: { notification in
+                    if let data = notification.userInfo?["data"] as? String,
+                       let json = data.convertToDictionary() {
+                        
+                        if let view = json.getString("view") {
+                            url = ""
+                            url = Static.baseUrl + view
+                        }
+                    }
+                })
+        }
     }
 }
 

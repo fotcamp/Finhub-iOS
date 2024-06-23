@@ -49,12 +49,20 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, 
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
-        completionHandler()
+        guard
+            let userInfo = response.notification.request.content.userInfo as? JSON
+        else { return }
+        
+        if let view = userInfo.getString("view") {
+            Static.viewUrl = view
+        }
+
+        SwiftSupport.sendNotification(data: userInfo.toJsonString)
     }
 }
 
 extension AppDelegate: MessagingDelegate {
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String?) {
-        
+//        print("token : \(fcmToken)") // 푸시토큰 확인용
     }
 }

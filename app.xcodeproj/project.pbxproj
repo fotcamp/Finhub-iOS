@@ -12,8 +12,11 @@
 		C81D694F2BC18B9000C77484 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D694E2BC18B9000C77484 /* JSON.swift */; };
 		C81D69512BC193AE00C77484 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D69502BC193AE00C77484 /* UIColor+Extension.swift */; };
 		C867F0C32BB059C0004CE321 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C867F0C22BB059C0004CE321 /* FirebaseMessaging */; };
+		C86A24032C109C64006285DD /* Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86A24022C109C64006285DD /* Static.swift */; };
 		C88D19382B9DE72200197101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19372B9DE72200197101 /* AppDelegate.swift */; };
 		C88D193A2B9DE73600197101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19392B9DE73600197101 /* SceneDelegate.swift */; };
+		C8AAE3342BE11AFE002478B2 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAE3332BE11AFE002478B2 /* NotificationName.swift */; };
+		C8AAE3362BE1228D002478B2 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAE3352BE1228D002478B2 /* String+Extension.swift */; };
 		FD7C22BE2B791FBE00CA1FC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */; };
 		FDA5B4E42BB7DE9300A4DC49 /* FinhubWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */; };
 		FDFD05C12B74E59C0029CA87 /* appApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFD05C02B74E59C0029CA87 /* appApp.swift */; };
@@ -49,9 +52,12 @@
 		C81D694E2BC18B9000C77484 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		C81D69502BC193AE00C77484 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		C867F0B82BB054A5004CE321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C86A24022C109C64006285DD /* Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static.swift; sourceTree = "<group>"; };
 		C88D19372B9DE72200197101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C88D19392B9DE73600197101 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C88D193B2B9DE87C00197101 /* app.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = app.entitlements; sourceTree = "<group>"; };
+		C8AAE3332BE11AFE002478B2 /* NotificationName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationName.swift; sourceTree = "<group>"; };
+		C8AAE3352BE1228D002478B2 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinhubWebView.swift; sourceTree = "<group>"; };
 		FDFD05BD2B74E59C0029CA87 /* app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,6 +102,7 @@
 		C81D69482BC1708600C77484 /* WebVIew */ = {
 			isa = PBXGroup;
 			children = (
+				FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */,
 				FDFD05EA2B74E6890029CA87 /* Webview.swift */,
 				C81D69492BC170B700C77484 /* WebBridgeHandler.swift */,
 			);
@@ -107,6 +114,8 @@
 			children = (
 				C81D694E2BC18B9000C77484 /* JSON.swift */,
 				C81D69502BC193AE00C77484 /* UIColor+Extension.swift */,
+				C8AAE3332BE11AFE002478B2 /* NotificationName.swift */,
+				C8AAE3352BE1228D002478B2 /* String+Extension.swift */,
 			);
 			path = extension;
 			sourceTree = "<group>";
@@ -136,7 +145,6 @@
 			children = (
 				C81D694D2BC18B7900C77484 /* extension */,
 				C81D69482BC1708600C77484 /* WebVIew */,
-				FDA5B4E32BB7DE9300A4DC49 /* FinhubWebView.swift */,
 				C867F0B82BB054A5004CE321 /* Info.plist */,
 				C88D193B2B9DE87C00197101 /* app.entitlements */,
 				FD7C22BD2B791FBE00CA1FC1 /* GoogleService-Info.plist */,
@@ -147,6 +155,7 @@
 				C88D19372B9DE72200197101 /* AppDelegate.swift */,
 				C88D19392B9DE73600197101 /* SceneDelegate.swift */,
 				C81D694B2BC1821D00C77484 /* SwiftSupport.swift */,
+				C86A24022C109C64006285DD /* Static.swift */,
 			);
 			path = app;
 			sourceTree = "<group>";
@@ -314,8 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				C81D694C2BC1821D00C77484 /* SwiftSupport.swift in Sources */,
+				C8AAE3342BE11AFE002478B2 /* NotificationName.swift in Sources */,
 				C88D193A2B9DE73600197101 /* SceneDelegate.swift in Sources */,
 				C88D19382B9DE72200197101 /* AppDelegate.swift in Sources */,
+				C8AAE3362BE1228D002478B2 /* String+Extension.swift in Sources */,
+				C86A24032C109C64006285DD /* Static.swift in Sources */,
 				FDFD05EB2B74E6890029CA87 /* Webview.swift in Sources */,
 				C81D694A2BC170B700C77484 /* WebBridgeHandler.swift in Sources */,
 				C81D694F2BC18B9000C77484 /* JSON.swift in Sources */,

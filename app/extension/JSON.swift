@@ -23,4 +23,12 @@ extension JSON {
     func getString(_ key: String) -> String? {
         return self[key] as? String
     }
+    
+    func getJsonObject(_ key: String) -> JSON? {
+        return self[key] as? JSON
+    }
+    
+    func getJsonArray(_ key: String) -> [JSON]? {
+        return self[key] as? [JSON]
+    }
 }

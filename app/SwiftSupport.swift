@@ -36,4 +36,16 @@ enum SwiftSupport {
             return keyWindow.rootViewController
         }
     }
+    
+    static func sendNotification(data: String) {
+        NotificationCenter.default.post(
+          name: .push,
+          object: nil,
+          userInfo: [
+            "data": data
+          ]
+        )
+    }
 }
+
+
