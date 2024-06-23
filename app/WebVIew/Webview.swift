@@ -29,6 +29,7 @@ struct Webview: UIViewRepresentable {
         
         webview.insetsLayoutMarginsFromSafeArea = false
         webview.scrollView.contentInset = .zero
+        webview.scrollView.contentInsetAdjustmentBehavior = .never
         
         return webview
     }
