@@ -20,6 +20,10 @@ extension JSON {
         }
     }
     
+    mutating func put(key: String, value: Any) -> Void {
+        self[key] = value
+    }
+    
     func getString(_ key: String) -> String? {
         return self[key] as? String
     }

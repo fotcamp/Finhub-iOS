@@ -83,13 +83,12 @@ extension WebBridgeHandler {
     }
     
     @objc func getRemoteConfig(_ json: JSON) {
-        guard 
-            let key = json.getString("val2"),
+        guard
             let callback = getCallback(json)
         else { return }
         
-        FinhubRemoteConfig.shared.get(key: key) { [weak self] value in
-            self?.delegate?.callbackWeb(callbackId: callback, data: value)
+        FinhubRemoteConfig.shared.get() { [weak self] value in
+            self?.delegate?.callbackWeb(callbackId: callback, data: value.toJsonString)
         }
     }
 }

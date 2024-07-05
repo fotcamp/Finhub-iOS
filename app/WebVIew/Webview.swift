@@ -18,12 +18,11 @@ struct Webview: UIViewRepresentable {
         webview.scrollView.bounces = false
         webview.allowsBackForwardNavigationGestures = true
         
+#if DEBUG
         if #available(iOS 16.4, *) {
-//            #if DEBUG
-                webview.isInspectable = true
-//            #endif
+            webview.isInspectable = true
         }
-        
+#endif
         webview.configuration.userContentController.add(WebViewContentController(webview), name: "jsToNative")
         webview.navigationDelegate = context.coordinator
         
