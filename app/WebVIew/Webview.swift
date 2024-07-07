@@ -18,12 +18,11 @@ struct Webview: UIViewRepresentable {
         webview.scrollView.bounces = false
         webview.allowsBackForwardNavigationGestures = true
         
+#if DEBUG
         if #available(iOS 16.4, *) {
-//            #if DEBUG
-                webview.isInspectable = true
-//            #endif
+            webview.isInspectable = true
         }
-        
+#endif
         webview.configuration.userContentController.add(WebViewContentController(webview), name: "jsToNative")
         webview.navigationDelegate = context.coordinator
         
@@ -58,9 +57,14 @@ class WebViewCoordinator: NSObject, WKNavigationDelegate {
 
 class WebViewContentController: NSObject, WKScriptMessageHandler {
     weak var webView: FinhubWebView?
+    var handler: WebBridgeHandler?
     
     init(_ webView: FinhubWebView) {
         self.webView = webView
+        
+        super.init()
+        
+        handler = WebBridgeHandler(self)
     }
     
     func userContentController(_ userContentController: WKUserContentController, didReceive message: WKScriptMessage) {
@@ -71,10 +75,8 @@ class WebViewContentController: NSObject, WKScriptMessageHandler {
             if let body = message.body as? String {
                 print(body)
                 
-                let handler = WebBridgeHandler(self)
-                
                 if let dic = convertToDictionary(text: body), let action = dic["val1"] as? String {
-                    handler.run(action: action, dic: dic)
+                    handler?.run(action: action, dic: dic)
                 }
             }
         }
