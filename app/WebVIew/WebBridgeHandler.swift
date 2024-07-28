@@ -91,4 +91,17 @@ extension WebBridgeHandler {
             self?.delegate?.callbackWeb(callbackId: callback, data: value.toJsonString)
         }
     }
+    
+    @objc func getNotificationPermission(_ json: JSON) {
+        guard let callback = getCallback(json) else { return }
+        
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { [weak self] granted, error in
+            let result: JSON = ["result": granted]
+            self?.delegate?.callbackWeb(callbackId: callback, data: result.toJsonString)
+        })
+    }
+    
+    @objc func requestNotificationPermission(_ json: JSON) {
+        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+    }
 }
