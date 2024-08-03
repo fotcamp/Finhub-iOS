@@ -8,6 +8,6 @@
 import Foundation
 
 class Static {
-    static let baseUrl = "http://finhub-front-end.vercel.app/"
+    static let baseUrl = "https://main.fin-hub.co.kr/"
     static var viewUrl = ""
 }
