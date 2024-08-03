@@ -30,6 +30,36 @@ struct Webview: UIViewRepresentable {
         webview.scrollView.contentInset = .zero
         webview.scrollView.contentInsetAdjustmentBehavior = .never
         
+        webview.evaluateJavaScript("navigator.userAgent") { (result, error) in
+            if let userAgent = result as? String {
+                let containsVersion = userAgent.contains("Version/")
+                let containsSafari = userAgent.contains("Safari/")
+                
+                var newUserAgent = userAgent
+                
+                if !containsVersion {
+                    newUserAgent += " Version/16.6"
+                }
+                
+                if !containsSafari {
+                    newUserAgent += " Safari/604.1"
+                }
+                
+                if newUserAgent != userAgent {
+                    webview.customUserAgent = newUserAgent
+                }
+
+                webview.evaluateJavaScript("navigator.userAgent") { (updatedResult, updatedError) in
+                    if let updatedUserAgent = updatedResult as? String {
+                        print("Updated User-Agent: \(updatedUserAgent)")
+                    }
+                }
+            } else if let error = error {
+                print("Error fetching User-Agent: \(error.localizedDescription)")
+            }
+        }
+        
+        
         return webview
     }
     
