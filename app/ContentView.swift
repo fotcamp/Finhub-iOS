@@ -34,13 +34,14 @@ struct ContentView: View {
                     if let data = notification.userInfo?["data"] as? String,
                        let json = data.convertToDictionary() {
                         
+                        self.url = ""
+                        self.action = ""
+                        
                         if let view = json.getString("view") {
-                            url = ""
                             url = Static.baseUrl + view
                         }
                         
                         if let action = json.getString("action") {
-                            self.action = ""
                             self.action = action
                         }
                     }
