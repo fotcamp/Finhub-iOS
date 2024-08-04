@@ -55,9 +55,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             let userInfo = response.notification.request.content.userInfo as? JSON
         else { return }
         
-        if let view = userInfo.getString("view") {
-            Static.viewUrl = view
-        }
+        Static.viewUrl = userInfo.getString("view") ?? ""
+        Static.action = userInfo.getString("action") ?? ""
 
         SwiftSupport.sendNotification(data: userInfo.toJsonString)
     }

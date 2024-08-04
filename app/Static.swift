@@ -10,4 +10,5 @@ import Foundation
 class Static {
     static let baseUrl = "https://main.fin-hub.co.kr/"
     static var viewUrl = ""
+    static var action = ""
 }

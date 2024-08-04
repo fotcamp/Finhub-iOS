@@ -10,6 +10,7 @@ import WebKit
 
 struct Webview: UIViewRepresentable {
     @Binding var url: String
+    @Binding var action: String
     
     func makeUIView(context: UIViewRepresentableContext<Webview>) -> WKWebView {
         let webview = FinhubWebView()
@@ -68,9 +69,20 @@ struct Webview: UIViewRepresentable {
     }
     
     func updateUIView(_ webview: WKWebView, context: UIViewRepresentableContext<Webview>) {
-        let request = URLRequest(url: URL(string: url)!, cachePolicy: .returnCacheDataElseLoad)
+        if !url.isEmpty {
+            let request = URLRequest(url: URL(string: url)!, cachePolicy: .returnCacheDataElseLoad)
+            
+            webview.load(request)
+        }
         
-        webview.load(request)
+        if !action.isEmpty {
+            let jsCode = "window.dispatchEvent(new CustomEvent('pushAction', { detail: '\(action)' }));"
+            webview.evaluateJavaScript(jsCode) { result, error in
+                if let error = error {
+                    print("Error dispatching event in WebView: \(error)")
+                }
+            }
+        }
     }
 }
 
