@@ -8,7 +8,7 @@
 import Foundation
 
 class Static {
-    static let baseUrl = "https://main.fin-hub.co.kr/"
+    static let baseUrl = Bundle.main.object(forInfoDictionaryKey: "BASE_URL") as! String
     static var viewUrl = ""
     static var action = ""
 }
