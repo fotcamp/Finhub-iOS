@@ -11,8 +11,17 @@
 		C81D694C2BC1821D00C77484 /* SwiftSupport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D694B2BC1821D00C77484 /* SwiftSupport.swift */; };
 		C81D694F2BC18B9000C77484 /* JSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D694E2BC18B9000C77484 /* JSON.swift */; };
 		C81D69512BC193AE00C77484 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81D69502BC193AE00C77484 /* UIColor+Extension.swift */; };
+		C835EDEC2CB269FE00B44D23 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C835EDEB2CB269FE00B44D23 /* LoginDelegate.swift */; };
+		C835EDEE2CB26A4C00B44D23 /* GoogleLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C835EDED2CB26A4C00B44D23 /* GoogleLogin.swift */; };
+		C835EDF02CB26A7F00B44D23 /* KakaoLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = C835EDEF2CB26A7F00B44D23 /* KakaoLogin.swift */; };
 		C867F0C32BB059C0004CE321 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = C867F0C22BB059C0004CE321 /* FirebaseMessaging */; };
 		C86A24032C109C64006285DD /* Static.swift in Sources */ = {isa = PBXBuildFile; fileRef = C86A24022C109C64006285DD /* Static.swift */; };
+		C88766972CB17CF700B64A63 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = C88766962CB17CF700B64A63 /* KakaoSDK */; };
+		C88766992CB17CF700B64A63 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C88766982CB17CF700B64A63 /* KakaoSDKAuth */; };
+		C887669B2CB17CF700B64A63 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = C887669A2CB17CF700B64A63 /* KakaoSDKCommon */; };
+		C887669D2CB17CF700B64A63 /* KakaoSDKUser in Frameworks */ = {isa = PBXBuildFile; productRef = C887669C2CB17CF700B64A63 /* KakaoSDKUser */; };
+		C88766A12CB1853C00B64A63 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = C88766A02CB1853C00B64A63 /* GoogleSignIn */; };
+		C88766A32CB1853C00B64A63 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C88766A22CB1853C00B64A63 /* GoogleSignInSwift */; };
 		C88D19382B9DE72200197101 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19372B9DE72200197101 /* AppDelegate.swift */; };
 		C88D193A2B9DE73600197101 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C88D19392B9DE73600197101 /* SceneDelegate.swift */; };
 		C8AAE3342BE11AFE002478B2 /* NotificationName.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8AAE3332BE11AFE002478B2 /* NotificationName.swift */; };
@@ -53,6 +62,9 @@
 		C81D694B2BC1821D00C77484 /* SwiftSupport.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftSupport.swift; sourceTree = "<group>"; };
 		C81D694E2BC18B9000C77484 /* JSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSON.swift; sourceTree = "<group>"; };
 		C81D69502BC193AE00C77484 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		C835EDEB2CB269FE00B44D23 /* LoginDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
+		C835EDED2CB26A4C00B44D23 /* GoogleLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleLogin.swift; sourceTree = "<group>"; };
+		C835EDEF2CB26A7F00B44D23 /* KakaoLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLogin.swift; sourceTree = "<group>"; };
 		C867F0B82BB054A5004CE321 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C86A24022C109C64006285DD /* Static.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Static.swift; sourceTree = "<group>"; };
 		C88D19372B9DE72200197101 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -83,6 +95,12 @@
 			files = (
 				C867F0C32BB059C0004CE321 /* FirebaseMessaging in Frameworks */,
 				C8C3B1552C2710CE00D558B9 /* FirebaseRemoteConfigSwift in Frameworks */,
+				C887669D2CB17CF700B64A63 /* KakaoSDKUser in Frameworks */,
+				C88766A32CB1853C00B64A63 /* GoogleSignInSwift in Frameworks */,
+				C88766972CB17CF700B64A63 /* KakaoSDK in Frameworks */,
+				C887669B2CB17CF700B64A63 /* KakaoSDKCommon in Frameworks */,
+				C88766992CB17CF700B64A63 /* KakaoSDKAuth in Frameworks */,
+				C88766A12CB1853C00B64A63 /* GoogleSignIn in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,6 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				C8C3B1562C2716B700D558B9 /* FinhubRemoteConfig.swift */,
+				C835EDEB2CB269FE00B44D23 /* LoginDelegate.swift */,
+				C835EDEF2CB26A7F00B44D23 /* KakaoLogin.swift */,
+				C835EDED2CB26A4C00B44D23 /* GoogleLogin.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -217,6 +238,12 @@
 			packageProductDependencies = (
 				C867F0C22BB059C0004CE321 /* FirebaseMessaging */,
 				C8C3B1542C2710CE00D558B9 /* FirebaseRemoteConfigSwift */,
+				C88766962CB17CF700B64A63 /* KakaoSDK */,
+				C88766982CB17CF700B64A63 /* KakaoSDKAuth */,
+				C887669A2CB17CF700B64A63 /* KakaoSDKCommon */,
+				C887669C2CB17CF700B64A63 /* KakaoSDKUser */,
+				C88766A02CB1853C00B64A63 /* GoogleSignIn */,
+				C88766A22CB1853C00B64A63 /* GoogleSignInSwift */,
 			);
 			productName = app;
 			productReference = FDFD05BD2B74E59C0029CA87 /* app.app */;
@@ -292,6 +319,8 @@
 			mainGroup = FDFD05B42B74E59C0029CA87;
 			packageReferences = (
 				C867F0C12BB059C0004CE321 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				C88766952CB168E700B64A63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				C887669F2CB1853B00B64A63 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */,
 			);
 			productRefGroup = FDFD05BE2B74E59C0029CA87 /* Products */;
 			projectDirPath = "";
@@ -338,6 +367,8 @@
 			files = (
 				C81D694C2BC1821D00C77484 /* SwiftSupport.swift in Sources */,
 				C8AAE3342BE11AFE002478B2 /* NotificationName.swift in Sources */,
+				C835EDF02CB26A7F00B44D23 /* KakaoLogin.swift in Sources */,
+				C835EDEE2CB26A4C00B44D23 /* GoogleLogin.swift in Sources */,
 				C88D193A2B9DE73600197101 /* SceneDelegate.swift in Sources */,
 				C88D19382B9DE72200197101 /* AppDelegate.swift in Sources */,
 				C8AAE3362BE1228D002478B2 /* String+Extension.swift in Sources */,
@@ -348,6 +379,7 @@
 				C81D694F2BC18B9000C77484 /* JSON.swift in Sources */,
 				FDFD05C32B74E59C0029CA87 /* ContentView.swift in Sources */,
 				FDFD05C12B74E59C0029CA87 /* appApp.swift in Sources */,
+				C835EDEC2CB269FE00B44D23 /* LoginDelegate.swift in Sources */,
 				FDA5B4E42BB7DE9300A4DC49 /* FinhubWebView.swift in Sources */,
 				C81D69512BC193AE00C77484 /* UIColor+Extension.swift in Sources */,
 			);
@@ -507,12 +539,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				BASE_URL = "https://dev-main.fin-hub.co.kr";
+				BASE_URL = "http://192.168.219.108:3000";
 				CODE_SIGN_ENTITLEMENTS = app/app.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
-				DEVELOPMENT_TEAM = JBY3X8KKJH;
+				DEVELOPMENT_TEAM = 8XA9DWRR85;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
@@ -546,11 +578,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 19;
 				DEVELOPMENT_ASSET_PATHS = "\"app/Preview Content\"";
-				DEVELOPMENT_TEAM = JBY3X8KKJH;
+				DEVELOPMENT_TEAM = 8XA9DWRR85;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = app/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "핀허브";
+				INFOPLIST_KEY_CFBundleDisplayName = "핀허브(개발)";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -696,6 +728,22 @@
 				minimumVersion = 10.23.0;
 			};
 		};
+		C88766952CB168E700B64A63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.22.7;
+			};
+		};
+		C887669F2CB1853B00B64A63 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/GoogleSignIn-iOS";
+			requirement = {
+				kind = exactVersion;
+				version = 7.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -703,6 +751,36 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C867F0C12BB059C0004CE321 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseMessaging;
+		};
+		C88766962CB17CF700B64A63 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C88766952CB168E700B64A63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		C88766982CB17CF700B64A63 /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C88766952CB168E700B64A63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		C887669A2CB17CF700B64A63 /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C88766952CB168E700B64A63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+		C887669C2CB17CF700B64A63 /* KakaoSDKUser */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C88766952CB168E700B64A63 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKUser;
+		};
+		C88766A02CB1853C00B64A63 /* GoogleSignIn */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C887669F2CB1853B00B64A63 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignIn;
+		};
+		C88766A22CB1853C00B64A63 /* GoogleSignInSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C887669F2CB1853B00B64A63 /* XCRemoteSwiftPackageReference "GoogleSignIn-iOS" */;
+			productName = GoogleSignInSwift;
 		};
 		C8C3B1542C2710CE00D558B9 /* FirebaseRemoteConfigSwift */ = {
 			isa = XCSwiftPackageProductDependency;

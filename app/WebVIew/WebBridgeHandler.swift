@@ -9,6 +9,8 @@ import Foundation
 import WebKit
 import FirebaseMessaging
 import FirebaseRemoteConfig
+import KakaoSDKUser
+import GoogleSignIn
 
 protocol WebBridgeDelegate: NSObjectProtocol {
     func callbackWeb(callbackId: String, data: String?)
@@ -16,6 +18,7 @@ protocol WebBridgeDelegate: NSObjectProtocol {
 
 class WebBridgeHandler: NSObject {
     weak var delegate: WebBridgeDelegate?
+    private var loginDelegate: LoginDelegate?
     
     init(_ delegate: WebBridgeDelegate? = nil) {
         self.delegate = delegate
@@ -103,5 +106,54 @@ extension WebBridgeHandler {
     
     @objc func requestNotificationPermission(_ json: JSON) {
         UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+    }
+    
+    @objc func loginKakao(_ json: JSON) {
+        guard let callback = getCallback(json) else { return }
+        
+        loginDelegate = KakaoLogin()
+        login(callback: callback)
+    }
+    
+    @objc func loginGoogle(_ json: JSON) {
+        guard let _ = SwiftSupport.topViewController,
+              let callback = getCallback(json)
+        else { return }
+        
+        loginDelegate = GoogleLogin()
+        login(callback: callback)
+    }
+    
+    @objc func loginApple(_ json: JSON) {
+        // TODO
+    }
+    
+    private func login(callback: String) {
+        loginDelegate?.login { [weak self] token, error in
+            guard let self = self else { return }
+            
+            var result: JSON = [:]
+            
+            if let error = error {
+                result = [
+                    "result": "error",
+                    "msg": error.localizedDescription
+                ]
+            }
+            else if let token = token {
+                result = [
+                    "result": "success",
+                    "token": token
+                ]
+            }
+            else {
+                result = [
+                    "result": "failed",
+                    "msg": "로그인 실패"
+                ]
+            }
+            
+            self.delegate?.callbackWeb(callbackId: callback, data: result.toJsonString)
+        }
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import KakaoSDKAuth
 
 class SceneDelegate: NSObject, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -19,6 +20,14 @@ class SceneDelegate: NSObject, UIWindowSceneDelegate {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             SwiftSupport.sendNotification(data: userInfo.toJsonString)
+        }
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        if let url = URLContexts.first?.url {
+            if (AuthApi.isKakaoTalkLoginUrl(url)) {
+                _ = AuthController.handleOpenUrl(url: url)
+            }
         }
     }
 }

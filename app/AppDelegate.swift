@@ -9,6 +9,9 @@ import Foundation
 import UIKit
 import FirebaseCore
 import FirebaseMessaging
+import KakaoSDKCommon
+import KakaoSDKAuth
+import GoogleSignIn
 
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, 
@@ -21,9 +24,12 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, 
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        // Firebase 초기화
         FirebaseApp.configure()
-        
+        // FirebaseRemoteConfig 초기화
         FinhubRemoteConfig.shared.ready()
+        // Kakao SDK 초기화
+        KakaoSDK.initSDK(appKey: Bundle.main.object(forInfoDictionaryKey: "KAKAO_SDK_KEY") as! String)
         
         let authOption: UNAuthorizationOptions = [.alert, .badge, .sound]
         UNUserNotificationCenter.current().requestAuthorization(options: authOption, completionHandler: {_, _ in })
@@ -38,6 +44,18 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
+    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+        if AuthApi.isKakaoTalkLoginUrl(url) {
+            return AuthController.handleOpenUrl(url: url)
+        }
+        
+        if GIDSignIn.sharedInstance.handle(url) {
+            return true
+        }
+
+        return false
     }
 }
 
