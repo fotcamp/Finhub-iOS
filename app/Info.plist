@@ -4,8 +4,6 @@
 <dict>
 	<key>BASE_URL</key>
 	<string>${BASE_URL}</string>
-	<key>KAKAO_SDK_KEY</key>
-	<string>8ac60f3977b6f8ae9d19501b7faf5edb</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -27,8 +25,12 @@
 	</array>
 	<key>GIDClientID</key>
 	<string>353339464651-cnrkadg38nfnk9fn2fset2hb1cho1lj9.apps.googleusercontent.com</string>
+	<key>GIDServerClientID</key>
+	<string>353339464651-dnul84p5jsljqkg1gfsgsdoqol5ci1ak.apps.googleusercontent.com</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
+	<key>KAKAO_SDK_KEY</key>
+	<string>8ac60f3977b6f8ae9d19501b7faf5edb</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>kakaokompassauth</string>

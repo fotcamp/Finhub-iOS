@@ -13,7 +13,7 @@ class GoogleLogin: LoginDelegate {
         guard let viewController = SwiftSupport.topViewController else { return }
         
         GIDSignIn.sharedInstance.signIn(withPresenting: viewController) { auth, error in
-            result?(auth?.user.idToken?.tokenString, error)
+            result?(auth?.serverAuthCode, error)
         }
     }
 }
